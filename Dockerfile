@@ -1,4 +1,5 @@
-FROM nishmal/mtproxy:latest
+FROM telegrammessenger/proxy:latest
 ENV PORT=8080
 EXPOSE 8080
-CMD ["sh", "-c", "/usr/local/bin/mtproto-proxy -u nobody -p $PORT -H $PORT -S $SECRET -P $AD_TAG --aes-pwd /etc/proxy-secret /etc/proxy-multi.conf"]
+# الكود الرسمي لتشغيل البروكسي مع المتغيرات التي ضبطناها في Railway
+CMD ["/bin/sh", "-c", "/usr/bin/mtproto-proxy -u nobody -p 8888 -H $PORT -S $SECRET -P $AD_TAG --aes-pwd /etc/proxy-secret /etc/proxy-multi.conf"]
